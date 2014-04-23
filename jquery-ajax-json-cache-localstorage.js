@@ -10,17 +10,7 @@
     var request;
 
     // generate cache key
-    var generateCacheKey = function(options) {
-      var url = options.url.replace(/\?callback=[^&]*&?/, '?');
-
-      if (options.data) {
-        url += options.data;
-      }
-
-      return options.type + ':' + url;
-    }
-
-    var cacheKey = generateCacheKey(options);
+    var cacheKey = options.type + ':' + options.url + (options.data || '');
 
     var storeResponse = function(data, textStatus, jqXHR) {
       var object = {
