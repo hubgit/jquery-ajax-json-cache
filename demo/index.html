@@ -9,6 +9,13 @@
 
 <script src="lib/jquery.js"></script>
 <script src="../jquery-ajax-json-cache-localstorage.js"></script>
-<script src="demo.js"></script>
 
 <textarea rows="20" cols="100"></textarea>
+
+<script>
+$(function() {
+  $.getJSON('http://www.bbc.co.uk/bbcone/programmes/schedules/london/today.json', function(data) {
+    $('textarea').html(JSON.stringify(data, null, '  '));
+  });
+});
+</script>
