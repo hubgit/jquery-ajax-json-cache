@@ -32,8 +32,6 @@
         headers: jqXHR.getAllResponseHeaders()
       };
 
-      console.log('cachekey', cacheKey)
-
       db.put(object, cacheKey);
     };
 
